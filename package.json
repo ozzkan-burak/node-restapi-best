@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/ozzkan-burak/node-restapi-best/issues"
   },
-  "homepage": "https://github.com/ozzkan-burak/node-restapi-best#readme"
+  "homepage": "https://github.com/ozzkan-burak/node-restapi-best#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }

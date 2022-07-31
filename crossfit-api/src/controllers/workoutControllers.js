@@ -11,10 +11,18 @@ const createNewWorkout = (req, res) => {
   res.send("Create new workout");
 };
 
-const updateOneWorkout = () => {
+const updateOneWorkout = (req, res) => {
   res.send("Update an existing workout");
 };
 
-const deleteOneWorkout = () => {
+const deleteOneWorkout = (req, res) => {
   res.send("Delete an existing workout");
+};
+
+module.exports = {
+  getAllWorkouts,
+  getOneWorkout,
+  createNewWorkout,
+  updateOneWorkout,
+  deleteOneWorkout,
 };

@@ -1,21 +1,30 @@
-const { get } = require("http")
+const Workout = require("../database/Workout");
 
-const getAllWorkouts = (req, res) => {
-  return
+const getAllWorkoutsService = (req, res) => {
+  const allWorkouts = Workout.getAllWorkouts();
+  return allWorkouts;
 };
 
-const getOneWorkout = (req, res) => {
+const getOneWorkoutService = (req, res) => {
   return;
 };
 
-const createNewWorkout = (req, res) => {
+const createNewWorkoutService = (req, res) => {
   return;
 };
 
-const updateOneWorkout = () => {
+const updateOneWorkoutService = () => {
   return;
 };
 
-const deleteOneWorkout = () => {
+const deleteOneWorkoutService = () => {
   return;
+};
+
+module.exports = {
+  getAllWorkoutsService,
+  getOneWorkoutService,
+  createNewWorkoutService,
+  updateOneWorkoutService,
+  deleteOneWorkoutService,
 };

@@ -1,4 +1,4 @@
-const fs = requre("fs");
+const fs = require("fs");
 
 const saveToDatabase = (DB) => {
   fs.writeFileSync("./src/database/db.json", JSON.stringyfy(DB, null, 2), {

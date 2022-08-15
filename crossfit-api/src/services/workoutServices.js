@@ -8,7 +8,11 @@ const getAllWorkoutsService = () => {
 };
 
 const getOneWorkoutService = (newWorkout) => {
-  
+  const workout = Workout.getOneWorkout(wporkout);
+  return workout;
+};
+
+const createNewWorkoutService = () => {
   const workoutToInsert = {
     ...newWorkout,
     id: uuid(),
@@ -20,16 +24,13 @@ const getOneWorkoutService = (newWorkout) => {
   return createdWorkout;
 };
 
-const createNewWorkoutService = () => {
-  
-};
-
 const updateOneWorkoutService = () => {
-  return;
+  const updateWorkout = Workout.updateOneWorkout(workoutId, changes);
+  return updateWorkout;
 };
 
 const deleteOneWorkoutService = () => {
-  return;
+  Workout.deleteOneWorkout(workoutId);
 };
 
 module.exports = {

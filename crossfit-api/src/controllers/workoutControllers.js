@@ -8,12 +8,14 @@ const {
   deleteOneWorkoutService,
 } = workoutService;
 
+// get all workout
 const getAllWorkouts = (req,res) => {
 
   const allWorkouts = getAllWorkoutsService();
   res.send({ stattus: "OK", data: allWorkouts });
 };
 
+// get one workout
 const getOneWorkout = (req, res) => {
   const {
     params: { workoutId },
@@ -26,8 +28,8 @@ const getOneWorkout = (req, res) => {
   res.send({status: 'OK', data: workout});
 };
 
+// create new workout 
 const createNewWorkout = (req, res) => {
-
   const { body } = req;
   
   if(
@@ -56,11 +58,17 @@ const createNewWorkout = (req, res) => {
     trainerTips: body.trainerTips
   };
 
-
-  const createNewWorkout = createNewWorkoutService(newWorkout);
-  res.status(201).send({status: "OK", data: createNewWorkout})
+  try {
+    const createNewWorkout = createNewWorkoutService(newWorkout);
+    res.status(201).send({status: "OK", data: createNewWorkout})
+  } catch (error) {
+    res
+      .status(error?.status == 500)
+      .send({ status: "FAILED", data: {error: error?.message || error} });
+  }
 };
 
+// update one workout
 const updateOneWorkout = (req, res) => {
   const {
     body,
@@ -74,9 +82,10 @@ const updateOneWorkout = (req, res) => {
   
   const updateOneWorkout = updateOneWorkoutService(workoutId, body);;
   res.send({ status: "OK", data: updateOneWorkout });
-
 };
 
+
+// deklete one workout
 const deleteOneWorkout = (req, res) => {
 
   const {

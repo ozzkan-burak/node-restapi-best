@@ -148,6 +148,3 @@ module.exports = {
   updateOneWorkout,
   deleteOneWorkout,
 };
-
-
-
